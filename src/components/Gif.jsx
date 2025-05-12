@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Gif = ({gif, hover=true}) => {
   return (
-    <Link to={`/${gif.type}/${gif.slug}`} id={gif.id}>
+    <Link to={`/${gif.type}/${gif.slug}`}>
         <div className='cursor-pointer mb-3 w-full relative group'>
             <img src={gif?.images?.fixed_width?.webp} alt={gif.alt_text} className='w-full rounded-lg object-cover transition-all duration-300'/>
             {hover && 

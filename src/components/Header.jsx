@@ -27,8 +27,8 @@ const Header = () => {
                 <h1 className='text-5xl font-bold cursor-pointer tracking-tight'>Giphy</h1>
             </Link>
             <div className='flex items-center gap-3'>
-                {categories?.slice(0, 7)?.map((category) => (
-                    <Link to={`/${category.name_encoded}`} className='px-4 py-2 text-lg font-semibold hover-gradient border-b-2 hidden lg:block'>
+                {categories?.slice(0, 7)?.map((category, index) => (
+                    <Link to={`/${category.name_encoded}`} className='px-4 py-2 text-lg font-semibold hover-gradient border-b-2 hidden lg:block' key={category.name_encoded} >
                         {category.name}
                     </Link>))
                 }
@@ -51,7 +51,8 @@ const Header = () => {
                         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-3'>
                             {categories.map(category => (
                                 <Link to={`/${category.name_encoded}`}
-                                    className='text-xl font-bold px-3 py-2 hover:bg-white hover:text-black hover:rounded-lg'>
+                                    className='text-xl font-bold px-3 py-2 hover:bg-white hover:text-black hover:rounded-lg'
+                                    key={category.name_encoded} >
                                     {category.name}
                                 </Link>
                             ))}

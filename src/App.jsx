@@ -9,6 +9,7 @@ import GifPage from './pages/GifPage'
 import Categories from './pages/Categories'
 import Home from './pages/Home' 
 import AppLayout from './layouts/AppLayout'
+import { GifProvider } from './contexts/GifProvider'
 
 // Routes
 // homepage
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider  router={router} />
+  return <GifProvider>
+    <RouterProvider  router={router} />
+  </GifProvider>
 }
 
 export default App
